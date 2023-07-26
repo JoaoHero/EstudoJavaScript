@@ -4,6 +4,13 @@ const sumAllButton = document.querySelector(".sum-all");
 const filterVeganButton = document.querySelector(".filter-vegan");
 const list = document.querySelector(".list");
 
+function format(value) {
+    return new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    }).format(value);
+}
+
 function showAll(products) {
     let newLi = '';
 
@@ -13,7 +20,7 @@ function showAll(products) {
             <li>
                 <img src="${element.src}" />
                 <p>${element.name}</p>
-                <p class="price">${element.price}</p>
+                <p class="price">${format(element.price)}</p>
             </li>
         `
     });
@@ -37,7 +44,7 @@ function sumAllItens() {
     }, 0);
 
     list.innerHTML = `
-        <li>A soma de todos os itens do menu: <p class="price">${totalValue}</p></li>
+        <li>A soma de todos os itens do menu: <p class="price">${format(totalValue)}</p></li>
     `
 };
 
