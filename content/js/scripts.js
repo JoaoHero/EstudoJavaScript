@@ -1,6 +1,7 @@
 const showAllButton = document.querySelector(".show-all");
 const mapButton = document.querySelector(".map-all");
 const sumAllButton = document.querySelector(".sum-all");
+const filterVeganButton = document.querySelector(".filter-vegan");
 const list = document.querySelector(".list");
 
 function showAll(products) {
@@ -40,8 +41,18 @@ function sumAllItens() {
     `
 };
 
+function filterVegan() {
+    const productsVegan = menuOptions.filter((element) => {
+        return element.vegan;
+    })
+
+    showAll(productsVegan);
+};
+
 showAllButton.addEventListener('click', () => showAll(menuOptions));
 
 mapButton.addEventListener('click', mapAll);
 
 sumAllButton.addEventListener('click', sumAllItens);
+
+filterVeganButton.addEventListener('click', filterVegan);
