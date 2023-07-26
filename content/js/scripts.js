@@ -1,5 +1,6 @@
 const showAllButton = document.querySelector(".show-all");
 const mapButton = document.querySelector(".map-all");
+const sumAllButton = document.querySelector(".sum-all");
 const list = document.querySelector(".list");
 
 function showAll(products) {
@@ -29,8 +30,18 @@ function mapAll() {
     showAll(newPrice);
 };
 
+function sumAllItens() {
+    const totalValue = menuOptions.reduce((acc, cur) => {
+        return acc + cur.price;
+    }, 0);
 
+    list.innerHTML = `
+        <li>A soma de todos os itens do menu: <p class="price">${totalValue}</p></li>
+    `
+};
 
 showAllButton.addEventListener('click', () => showAll(menuOptions));
 
 mapButton.addEventListener('click', mapAll);
+
+sumAllButton.addEventListener('click', sumAllItens);
