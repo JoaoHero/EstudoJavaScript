@@ -1,4 +1,4 @@
-# Projeto de Menu de Lanches com JavaScript
+# Projeto Menu de Lanches com JavaScript
 
 Este projeto é uma aplicação simples que exibe um menu de lanches com seus respectivos nomes e valores. Visei o aprendizado e o aprimoramento do uso dos métodos: `forEach`, `Map`, `Filter` e `Reduce` do JavaScript para diferentes funcionalidades.
 
